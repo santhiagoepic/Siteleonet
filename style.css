@@ -1,0 +1,15 @@
+
+body { background-color: #000; color: #fff; }
+header { background-color: #E1A61A; }
+.mb-2{ width: 70px;}
+.navbar-nav .nav-link { color: #fff !important; }
+.carousel img { max-height: 500px; object-fit: cover; }
+.promo img { transition: opacity 0.5s ease-in-out; }
+.promo img:hover { opacity: 0.8; }
+footer { background-color: #E1A61A; color: #000; }
+.instagram-gallery img {
+    width: 100%;   /* Garante que a imagem ocupa toda a largura do container */
+    height: 300px; /* Ajuste a altura conforme necessário */
+    object-fit: cover; /* Mantém o corte adequado da imagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
