@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"  # Mapeia a porta 8080 do host para a porta 80 do container
+    volumes:
+      - wordpress_data:/var/www/html  # Armazenamento persistente para os arquivos do WordPress
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: example
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - db_data:/var/lib/mysql  # Armazenamento persistente para o banco de dados
+
+volumes:
+  wordpress_data:
+  db_data:
